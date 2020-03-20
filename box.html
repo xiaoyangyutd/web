@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>实现自适应的正方形</title>
+	<script type="text/javascript">
+		
+	</script>
+	<style type="text/css">
+		/*.box {
+			width:50%;
+			height:0;
+			padding-bottom:50%;
+			background-color:lightblue;
+		}*/
+		/*.box {
+			width:50%;
+			height:50vw;
+			background-color:lightblue;
+		}*/
+		.box{
+			width:50%;
+			background-color: lightblue;
+			overflow: hidden;
+		}
+		.box:before{
+			content: '';
+			display: block;
+			margin-top:100%;
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
