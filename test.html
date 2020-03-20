@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>:after清除浮动</title>
+	<style>
+			.out {
+				width:200px;
+				border: 5px solid red;
+			}
+			
+			.out:before,.out:after{
+			    content: '';
+			    display: block;
+			    width: 0px;
+			    height: 0px;
+			    clear: both;
+			}
+			
+			.in {
+				width: 100px;
+				height: 100px;
+				float:left;
+			}
+			.up:after{ content: '↑'; color: #f00;}
+			.down:after{ content: '↓'; color: #0f0;}
+
+			/*.out:before,.out:after {
+				content:"";
+			}
+			.out:after {
+				clear: both;
+			}
+			.clearfix {
+				*zoom:1;
+			}*/
+
+			.box{
+				width: 0px;
+				height: 0px;
+				border-top:50px solid rgba(0,0,0,0);
+				border-right:50px solid rgba(0,0,0,0);
+				border-bottom: 50px solid green;
+				border-left: 50px solid rgba(0,0,0,0);
+			}
+
+
+			.flower{
+				animation: antRotate 1.2s infinite linear;
+			}
+			.up {
+				animation: antSpin 1s infinite linear;
+			}
+
+			@keyframe antSpin{
+				to {
+					opacity: 1
+				}
+			}
+			@keyframe antRotate {
+				to {
+					transform: rotate(405);
+				}
+			}
+
+		</style>
+</head>
+
+<body>
+	<div class="out">
+		<div class="in" style="background-color: blue;"></div>
+		<div class="in" style="background-color: green;"></div>
+	</div>
+
+	<p class="up">上升</p>
+	<p class="down">下降</p>
+
+	<div class="box"></div>
+
+	<div class="flower">
+		<p class="up">上升</p>
+	</div>
+
+	<div style="font-size: 20px">
+      123
+      <div style="font-size: 2em;width: 2em;background-color: yellow">456</div>
+ </div>
+</body>
+</html>
