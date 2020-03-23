@@ -39,3 +39,13 @@ promise.prototype.then = function () {
 		arguments[1](this.msg);
 	}
 }
+
+
+//promise.finally实现
+Promise.prototype.finally = function (callback) {
+	let p = this.constructor;
+	return this.then(
+			value => P.resolve(callback()).then(()=> value),
+			reason => P.resolve(callback().then(()=>{throw reason}))
+		);
+};
