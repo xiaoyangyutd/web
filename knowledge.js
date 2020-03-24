@@ -20,3 +20,37 @@
 4. 调度和切换：线程上下文切换比进程上下文切换要快得多
 
 */
+
+
+dom.style.width/height
+
+dom.currentStyle.width
+
+
+
+export default [
+	{
+		path: '/loginIndex',
+		name: 'login',
+		meta: {
+			title: 'login',
+			hideInMenu: true
+		},
+		component: resolve => {
+			require(['@/pages/login/login'], resolve);
+		}
+	}
+]
+
+
+{
+	path: '/loginIndex',
+	name: 'login',
+	meta:{
+		hideInMenu: true,
+		title: 'login'
+	},
+	component: resolve => {
+		require(['@/pages/login/login'], resolve);
+	}
+}
