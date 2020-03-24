@@ -38,6 +38,7 @@ promise.prototype.then = function () {
 	} else if (this.status === 'rejected' && arguments[1]) {
 		arguments[1](this.msg);
 	}
+<<<<<<< HEAD
 }
 
 
@@ -49,3 +50,6 @@ Promise.prototype.finally = function (callback) {
 			reason => P.resolve(callback().then(()=>{throw reason}))
 		);
 };
+=======
+}
+>>>>>>> 28a56ab43fe44767ca255bcdd3158ef370bd9685
