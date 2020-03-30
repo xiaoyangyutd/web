@@ -38,4 +38,18 @@ promise.prototype.then = function () {
 	} else if (this.status === 'rejected' && arguments[1]) {
 		arguments[1](this.msg);
 	}
+<<<<<<< HEAD
 }
+
+
+//promise.finally实现
+Promise.prototype.finally = function (callback) {
+	let p = this.constructor;
+	return this.then(
+			value => P.resolve(callback()).then(()=> value),
+			reason => P.resolve(callback().then(()=>{throw reason}))
+		);
+};
+=======
+}
+>>>>>>> 28a56ab43fe44767ca255bcdd3158ef370bd9685
