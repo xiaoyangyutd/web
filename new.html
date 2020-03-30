@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="dns-prefetch" href="www.baidu.com">
+	<meta http-equip="x-dns-prefetch-control" content="on">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,mininum-scale=1.0,maxinum-scale=1.0,user-scalable=no">
+	<link rel="preload" href="http://example.com">
+	<link rel="prerender"href="http://baidu.com">
+</head>
+<body>
+	<h1>IE:trident内核</h1>
+	<h1>Chrome:Blink内核</h1>
+	<h1>Firefox:gecko内核</h1>
+	<p>
+		因为浏览器有并发请求限制，在HTTP/1.1时代，每个请求都需要建立和断开，消耗了好几个RTT时间，并且由于TCP慢启动的原因，加载体积大的文件会需要更多的时间
+		在HTTP/2.0中 引入了多路复用，能够让多个请求使用同一个TCP连接，加大的加快了网页的加载速度，并且还支持Header压缩，进一步的减少了请求的数据大小
+
+		预加载其实是声明式的fetch,强制浏览器请求资源，并且不会阻塞onload事件；文件不需要立即使用，但需要提前加载
+		预渲染是将下载的文件预先在后台渲染；预渲染虽然可以提高页面的加载速度，但要保证该页面百分之百会被用户 在之后打开，否则就白白浪费资源去渲染
+
+	</p>
+	<p>
+		懒执行就是将某些逻辑延迟到使用时再计算。该技术可以用于首屏优化，对于某些 耗时操作并不需要在首屏就使用的，使用懒执行；
+		懒加载就是将不关键的资源延后加载，
+		原理就是只加载自定义区域（通常是可视区域 ，但也可以是即将进入 可视区域内需要加载的东西。
+	</p>
+	<img src="http://placehold.it/600x300/0f0/cc.png" alt="">
+	<script type="text/javascript">
+		console.log("client",document.documentElement.clientHeight);
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+	<link rel="dns-prefetch" href="www.baidu.com">
+	<meta http-equiv="x-dns-prefetch-control" content="on"
+</head>
+　　<style>
+　　.img_wd{
+　　font-size:30;padding-top:20px;
+　　text-align:left;padding-left:70px;line-height:40px;
+　　background:url(110.jpg) top center no-repeat;
+　　width:252px;height:127px;line-heiht:10px;
+　　text-align:center;
+　　font-family:"微软雅黑,仿宋,楷体,黑体"
+　　color: #fafafa;
+　　text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+　　}
+　　</style>
+　　<body>
+　　<div class="img_wd" style="">
+　　青春就是这么任性！<Br>
+　　Younger GOOD
+<div id="img" style="position: absolute;visibility :hidden;padding:0px;" onmouseover="clearInterval(interval)" onmouseout="interval = setInterval('changePos()', delay)" align="middle">
+　　<span style="CURSOR:hand;color:red;font-weight:bold;font-align:center;font-size:12px;padding-left:0px;" onclick="clearInterval(interval);fdck.style.visibility = 'hidden';img.style.visibility = 'hidden';">隐藏</span>
+　　<div id="fdck" style="width:100%; height:100%; font-align:center; visibility:visible;border：0px; background-color: no">
+　　<iframe width=320 height=150 src="topWindows.html" frameborder=no scrolling="no">
+　　</iframe>
+　　</div>
+　　</div>
+　　</div>
+<script language=javascript>
+　　var xPos = 20;
+　　var yPos = document.body.clientHeight;
+　　var step = 1;
+　　var delay = 30;
+　　var height = 0;
+　　var Hoffset = 0;
+　　var Woffset = 0;
+　　var yon = 0;
+　　var xon = 0;
+　　var pause = true;
+　　var interval;
+　　img.style.top = yPos;
+　　function changePos() {
+　　width = document.body.clientWidth;
+　　height = document.body.clientHeight;
+　　Hoffset = img.offsetHeight;
+　　Woffset = img.offsetWidth;
+　　img.style.left = xPos + document.body.scrollLeft;
+　　img.style.top = yPos + document.body.scrollTop;
+　　if (yon) {yPos = yPos + step;}
+　　else {yPos = yPos - step;}
+　　if (yPos < 0) {yon = 1;yPos = 0;}
+　　if (yPos >= (height - Hoffset)) {yon = 0;
+　　yPos = (height - Hoffset);}
+　　if (xon) {xPos = xPos + step;}
+　　else {xPos = xPos - step;}
+　　if (xPos < 0) {xon = 1;xPos = 0;}
+　　if (xPos >= (width - Woffset)) {xon = 0;xPos = (width - Woffset);}
+　　}
+　　function start() {
+　　img.style.visibility = "visible";
+　　interval = setInterval('changePos()', delay);}
+　　start();
+　　</script>
+　　</body>
+　　</html>
